@@ -1,0 +1,10 @@
+<% @meeting.errors.full_messages.each do |error| %>
+  <div><%= error %></div>
+<% end %>
+
+<h1>Update meeting</h1>
+
+<%= form_tag "/meetings/#{@meeting.id}", method: :patch do %>
+  <%= render partial: "form_fields" %>
+  <%= submit_tag "Update Meeting" %>
+<% end %>
